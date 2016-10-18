@@ -5,10 +5,11 @@ Helper script to migrate environment variables between resin.io apps using the S
 ## Usage
 
 This script requires Python 2.7 (due to the requirements of the resin.io SDK).
-Install the dependencies with `pip install -r requirements.txt`
+Install the dependencies with `pip install -r requirements.txt`. After that
+run the script:
 
 ```
-$python envmigrate.py --help
+$./envmigrate.py --help
 Usage: envmigrate.py [OPTIONS]
 
   Migrate environment variables from one resin.io app to another, optionally
@@ -24,6 +25,17 @@ Options:
   -q, --quiet         Toggles hiding process details
   --yes               Confirm the action without prompting.
   --help              Show this message and exit.
+```
+
+For example:
+
+```
+$./envmigrate.py -f 129771 -t 129772 --delete-extra
+Are you sure you want to copy the env vars? [y/N]: y
+Logged in user: imrehg
+Updating ENVVAR -> XYZ
+Updating RESIN_SUPERVISOR_DELTA -> 1
+Deleting TOOMUCH
 ```
 
 ## License
